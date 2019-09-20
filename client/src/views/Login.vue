@@ -83,4 +83,7 @@ export default {
   box-shadow: 0 3px #606188;
   transform: translateY(4px);
 }
+.login-button:focus {
+  outline: 0;
+}
 </style>
