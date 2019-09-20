@@ -35,7 +35,7 @@
     <form class="mt-3" @submit.prevent="addBoard()">
       <input
         type="text"
-        placeholder="title"
+        placeholder="title..."
         class="nes-input col-3 mt-3"
         v-model="newBoard.title"
         required

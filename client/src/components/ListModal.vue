@@ -16,12 +16,12 @@
                 type="text"
                 class="form-control"
                 id="title"
-                placeholder="Enter a title"
+                placeholder="Enter a title..."
                 v-model="newList.title"
                 required
               />
             </div>
-            <button type="submit" class="list-button text-color">Make List</button>
+            <button type="submit" class="nes-btn">Make List</button>
           </form>
         </div>
         <div class="modal-footer"></div>

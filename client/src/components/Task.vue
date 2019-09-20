@@ -22,7 +22,7 @@
     <!-- dropdown for list select -->
     <div class="nes-select font text-color">
       <select v-model="selected">
-        <option value disabled selected hidden>Move selected...</option>
+        <option value disabled selected hidden>Move task...</option>
         <option v-for="list in lists" :key="list._id" :value="list._id">{{list.title}}</option>
       </select>
     </div>

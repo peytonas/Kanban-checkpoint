@@ -16,12 +16,12 @@
                 type="text"
                 class="form-control text-color"
                 id="title"
-                placeholder="Enter a task title"
+                placeholder="Enter a task title..."
                 v-model="newTask.title"
                 required
               />
             </div>
-            <button type="submit" class="task-button text-color">Make a Task</button>
+            <button type="submit" class="nes-btn">Make a Task</button>
           </form>
         </div>
         <div class="modal-footer"></div>

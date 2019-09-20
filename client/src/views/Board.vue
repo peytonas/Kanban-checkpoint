@@ -1,6 +1,9 @@
 <template>
   <div class="container-fluid font">
-    <div class="row justify-content-end">
+    <div class="row justify-content-between">
+      <div class="col-1 mt-2">
+        <button class="nes-btn is-primary mt-2 text-dark" @click="gotoBoards()">Boards</button>
+      </div>
       <div class="col-1 mt-2">
         <button class="nes-btn is-error" @click="deleteBoard()">
           <i class="nes-icon close is-small"></i>
@@ -12,7 +15,6 @@
         <h1 class="nes-container is-rounded is-centered font">
           <h1 class="text-color">{{board.title}}</h1>
         </h1>
-        <button class="nes-btn mt-2" @click="gotoBoards()">Back to Boards Page</button>
       </div>
     </div>
     <div class="row justify-space-between">
