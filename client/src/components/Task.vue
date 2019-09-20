@@ -1,9 +1,15 @@
 <template>
-  <div class="card">
-    <div class="card-body text-color">
-      <h5 class="card-title">{{taskProp.title}}</h5>
-      <p class="card-text">{{taskProp.body}}</p>
+  <div class="container">
+    <div>
+      <div>
+        <h5 class="text-color">{{taskProp.title}}</h5>
+      </div>
     </div>
+    <!-- <div class="card"> -->
+    <!-- <div class="card-body text-color"> -->
+    <!-- <h5 class="card-title">{{taskProp.title}}</h5> -->
+    <!-- <p class="card-text">{{taskProp.body}}</p> -->
+    <!-- </div> -->
     <button class="delete-button" @click.prevent="deleteTask()">Delete Task</button>
     <!-- comment card in card -->
     <div class="col-12 mt-3">
@@ -24,6 +30,7 @@
       <option v-for="list in lists" :key="list._id" :value="list._id">{{list.title}}</option>
     </select>
     <button class="comment-button" @click="moveTask()">Move it</button>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -78,7 +85,7 @@ export default {
 .comment-button {
   display: inline-block;
   padding: 3px 8px;
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
   outline: none;
   color: #fff;
@@ -101,7 +108,7 @@ export default {
 .delete-button {
   display: inline-block;
   padding: 3px 8px;
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
   outline: none;
   color: #fff;

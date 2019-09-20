@@ -1,22 +1,48 @@
 <template>
-  <div class="row">
-    <div class="col">
-      <div>
-        <h1 class="text-color">WELCOME TO THE BOARDS!!!</h1>
-        <button class="logout-button" @click="logout()">Logout</button>
-        <form class="mt-3" @submit.prevent="addBoard()">
-          <input type="text" placeholder="title" v-model="newBoard.title" required />
-          <input type="text" placeholder="description" v-model="newBoard.description" />
-          <button class="board-button">Create Board</button>
-        </form>
-        <button class="mt-3 board-button" v-for="board in boards" :key="board._id">
-          <router-link
-            :to="{name: 'board', params: {boardId: board._id}}"
-            class="text-white"
-          >{{board.title}}</router-link>
+  <div class="container-fluid">
+    <div class="row justify-content-end">
+      <div class="col-1 mt-2">
+        <button class="logout-button text-white" @click="logout()">
+          <i class="fas fa-door-open"></i>
         </button>
       </div>
     </div>
+    <!-- <h1 class="text-color">Welcome home, {{this.$store.state.user.name}}!!!</h1> -->
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <h1 class="nes-container is-rounded is-centered">
+          <p>Welcome home, {{this.$store.state.user.name}}!!!</p>
+        </h1>
+      </div>
+    </div>
+
+    <!-- <section>
+            <button
+              type="button"
+              class="nes-btn is-error"
+              onclick="document.getElementById('dialog-dark-rounded').showModal();"
+            >logout</button>
+            <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+              <form method="dialog">
+                <p>Are you sure you want to log out?</p>
+                <menu class="dialog-menu">
+                  <button class="nes-btn">Cancel</button>
+                  <button class="nes-btn is-primary">Confirm</button>
+                </menu>
+              </form>
+            </dialog>
+    </section>-->
+
+    <form class="mt-3" @submit.prevent="addBoard()">
+      <input type="text" placeholder="title" v-model="newBoard.title" required />
+      <button class="board-button">Create Board</button>
+    </form>
+    <button class="mt-3 board-button" v-for="board in boards" :key="board._id">
+      <router-link
+        :to="{name: 'board', params: {boardId: board._id}}"
+        class="text-white"
+      >{{board.title}}</router-link>
+    </button>
   </div>
 </template>
 
@@ -31,8 +57,7 @@ export default {
   data() {
     return {
       newBoard: {
-        title: "",
-        description: ""
+        title: ""
       }
     };
   },
@@ -44,7 +69,7 @@ export default {
   methods: {
     addBoard() {
       this.$store.dispatch("addBoard", this.newBoard);
-      this.newBoard = { title: "", description: "" };
+      this.newBoard = { title: "" };
     },
     logout() {
       this.$store.dispatch("logout");
@@ -82,7 +107,7 @@ export default {
 .logout-button {
   display: inline-block;
   padding: 3px 8px;
-  font-size: 15px;
+  font-size: 12px;
   text-align: center;
   outline: none;
   color: #fff;

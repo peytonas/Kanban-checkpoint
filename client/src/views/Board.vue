@@ -1,9 +1,19 @@
 <template>
-  <div class="container-fluid board">
-    <h1 class="text-color">{{board.title}}</h1>
-    <button class="board-button" @click="gotoBoards()">Back to Boards Page</button>
-    <button class="delete-button" @click="deleteBoard()">Delete Board</button>
+  <div class="container-fluid">
+    <div class="row justify-content-end">
+      <div class="col-1 mt-2">
+        <button class="delete-button" @click="deleteBoard()">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
     <div class="row">
+      <div class="col-12 justify-space-between">
+        <h1 class="text-color">{{board.title}}</h1>
+        <button class="board-button" @click="gotoBoards()">Back to Boards Page</button>
+      </div>
+    </div>
+    <div class="row justify-space-between">
       <div class="col-12 mt-3">
         <button
           class="board-button"
@@ -13,7 +23,7 @@
       </div>
       <ListModal :boardId="$route.params.boardId" />
     </div>
-    <div class="col-12 mt-3">
+    <div class="row">
       <list class="mt-2" v-for="list in lists" :listProp="list" :key="list._id" />
     </div>
   </div>
@@ -84,7 +94,7 @@ export default {
 .delete-button {
   display: inline-block;
   padding: 3px 8px;
-  font-size: 15px;
+  font-size: 12px;
   text-align: center;
   outline: none;
   color: #fff;

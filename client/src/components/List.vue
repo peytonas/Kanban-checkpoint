@@ -1,19 +1,21 @@
 <template>
-  <div class="card card-background">
+  <div class="col-4 card card-background">
     <div class="card-body text-color">
       <h5 class="card-title">{{listProp.title}}</h5>
       <p class="card-text">{{listProp.body}}</p>
       <!-- start of card in card -->
-      <div class="col-5 mt-3">
-        <button
-          class="task-button"
-          data-toggle="modal"
-          :data-target="'#create-task-modal' +listProp._id"
-        >Create A Task</button>
-      </div>
-      <TaskModal :listId="listProp._id" />
-      <div class="col-5 mt-3">
-        <task class="mt-2" v-for="task in tasks" :taskProp="task" :key="task._id" />
+      <div class="row justify-content-center">
+        <div class="col-4 mt-1">
+          <button
+            class="task-button"
+            data-toggle="modal"
+            :data-target="'#create-task-modal' +listProp._id"
+          >Create A Task</button>
+        </div>
+        <TaskModal :listId="listProp._id" />
+        <div class="col-12 mt-3">
+          <task class="mt-2" v-for="task in tasks" :taskProp="task" :key="task._id" />
+        </div>
       </div>
       <!-- end of card in card -->
     </div>
@@ -57,7 +59,7 @@ export default {
 .task-button {
   display: inline-block;
   padding: 3px 8px;
-  font-size: 15px;
+  font-size: 12px;
   text-align: center;
   outline: none;
   color: #fff;
@@ -80,7 +82,7 @@ export default {
 .delete-button {
   display: inline-block;
   padding: 3px 8px;
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
   outline: none;
   color: #fff;
