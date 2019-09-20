@@ -3,14 +3,14 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Create A List!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title text-color">Create A List!</h5>
+          <button class="close-button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <form @submit.prevent="addList()">
-            <div class="form-group">
+            <div class="form-group text-color">
               <label for="title">Title</label>
               <input
                 type="text"
@@ -20,19 +20,8 @@
                 v-model="newList.title"
                 required
               />
-              <!-- <div class="form-group">
-                <label for="body">Body</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="body"
-                  placeholder="Enter some stuff"
-                  v-model="newList.body"
-                  required
-                />
-              </div>-->
             </div>
-            <button type="submit" class="btn btn-primary">Make List</button>
+            <button type="submit" class="list-button text-color">Make List</button>
           </form>
         </div>
         <div class="modal-footer"></div>
@@ -64,4 +53,53 @@ export default {
 
 
 <style scoped>
+.text-color {
+  color: #908a99;
+}
+.list-button {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 15px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #b5b6e4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #606188;
+}
+.list-button:hover {
+  background-color: #a4a5d3;
+}
+.list-button:active {
+  background-color: #8d8ebe;
+  box-shadow: 0 3px #606188;
+  transform: translateY(4px);
+}
+.list-button:focus {
+  outline: 0;
+}
+.close-button {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 15px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4f43ae;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #312879;
+}
+.close-button:hover {
+  background-color: #3f3494;
+}
+.close-button:active {
+  background-color: #4f43ae;
+  box-shadow: 0 3px #312879;
+  transform: translateY(4px);
+}
+.close-button:focus {
+  outline: 0;
+}
 </style>
