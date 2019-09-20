@@ -3,7 +3,11 @@
     <div class="card-body text-color">
       <p class="card-text">{{commentProp.body}}</p>
     </div>
-    <button class="delete-button" @click.prevent="deleteComment()">Delete Comment</button>
+    <div class="row justify-content-center">
+      <button class="nes-btn is-error" @click.prevent="deleteComment()">
+        <i class="nes-icon close is-small"></i>
+      </button>
+    </div>
   </div>
 </template>
 

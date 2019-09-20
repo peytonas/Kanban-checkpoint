@@ -1,25 +1,28 @@
 <template>
-  <div class="col-4 card card-background">
+  <div class="col-4 card card-background font">
     <div class="card-body text-color">
       <h5 class="card-title">{{listProp.title}}</h5>
-      <p class="card-text">{{listProp.body}}</p>
       <!-- start of card in card -->
       <div class="row justify-content-center">
-        <div class="col-4 mt-1">
+        <div class="col-3 mt-1">
           <button
-            class="task-button"
+            class="nes-btn"
             data-toggle="modal"
             :data-target="'#create-task-modal' +listProp._id"
           >Create A Task</button>
         </div>
-        <TaskModal :listId="listProp._id" />
-        <div class="col-12 mt-3">
-          <task class="mt-2" v-for="task in tasks" :taskProp="task" :key="task._id" />
-        </div>
+      </div>
+      <TaskModal :listId="listProp._id" />
+      <div class="col-12 mt-3">
+        <task v-for="task in tasks" :taskProp="task" :key="task._id" />
       </div>
       <!-- end of card in card -->
     </div>
-    <button class="delete-button" @click.prevent="deleteList()">Delete List</button>
+    <div class="row justify-content-center">
+      <button class="nes-btn is-error" @click.prevent="deleteList()">
+        <i class="nes-icon close is-small"></i>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -52,6 +55,10 @@ export default {
 <style scoped>
 .text-color {
   color: #908a99;
+}
+.font {
+  font-family: "Press Start 2p";
+  font-size: 5px;
 }
 .card-background {
   background-color: #211a21;

@@ -4,12 +4,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Create a task for your list!</h5>
-          <button
-            type="button"
-            class="delete-button text-color"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="nes-btn is-error" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>

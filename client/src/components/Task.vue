@@ -1,16 +1,11 @@
 <template>
   <div class="container">
     <div>
-      <div>
-        <h5 class="text-color">{{taskProp.title}}</h5>
-      </div>
+      <h5 class="text-color">{{taskProp.title}}</h5>
     </div>
-    <!-- <div class="card"> -->
-    <!-- <div class="card-body text-color"> -->
-    <!-- <h5 class="card-title">{{taskProp.title}}</h5> -->
-    <!-- <p class="card-text">{{taskProp.body}}</p> -->
-    <!-- </div> -->
-    <button class="delete-button" @click.prevent="deleteTask()">Delete Task</button>
+    <button class="nes-btn is-error" @click.prevent="deleteTask()">
+      <i class="nes-icon close is-small"></i>
+    </button>
     <!-- comment card in card -->
     <div class="col-12 mt-3">
       <button
@@ -25,10 +20,12 @@
     </div>
     <!-- end of comment card -->
     <!-- dropdown for list select -->
-    <select v-model="selected">
-      <option disabled>Move task to selected list</option>
-      <option v-for="list in lists" :key="list._id" :value="list._id">{{list.title}}</option>
-    </select>
+    <div class="nes-select font text-color">
+      <select v-model="selected">
+        <option value disabled selected hidden>Move selected...</option>
+        <option v-for="list in lists" :key="list._id" :value="list._id">{{list.title}}</option>
+      </select>
+    </div>
     <button class="comment-button" @click="moveTask()">Move it</button>
     <!-- </div> -->
   </div>
@@ -78,6 +75,10 @@ export default {
 <style scoped>
 .text-color {
   color: #908a99;
+}
+.font {
+  font-family: "Press Start 2p";
+  font-size: 10px;
 }
 .card-background {
   background-color: #cec9cc;

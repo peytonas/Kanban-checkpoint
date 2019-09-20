@@ -4,7 +4,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-color">Create A List!</h5>
-          <button class="close-button" data-dismiss="modal" aria-label="Close">
+          <button class="nes-btn is-error" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>

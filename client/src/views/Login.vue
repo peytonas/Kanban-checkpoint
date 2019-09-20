@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font">
     <form v-if="loginForm" @submit.prevent="loginUser">
       <input type="email" v-model="creds.email" placeholder="email" />
       <input type="password" v-model="creds.password" placeholder="password" />
@@ -62,6 +62,10 @@ export default {
 }
 .text-color {
   color: #908a99;
+}
+.font {
+  font-family: "Press Start 2p";
+  font-size: 10px;
 }
 .login-button {
   display: inline-block;

@@ -1,16 +1,15 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid font">
     <div class="row justify-content-end">
       <div class="col-1 mt-2">
-        <button class="logout-button text-white" @click="logout()">
-          <i class="fas fa-door-open"></i>
+        <button class="nes-btn is-error text-white" @click="logout()">
+          <i class="nes-icon close is-small"></i>
         </button>
       </div>
     </div>
-    <!-- <h1 class="text-color">Welcome home, {{this.$store.state.user.name}}!!!</h1> -->
     <div class="row justify-content-center">
       <div class="col-6">
-        <h1 class="nes-container is-rounded is-centered">
+        <h1 class="nes-container is-rounded is-centered text-color">
           <p>Welcome home, {{this.$store.state.user.name}}!!!</p>
         </h1>
       </div>
@@ -34,15 +33,21 @@
     </section>-->
 
     <form class="mt-3" @submit.prevent="addBoard()">
-      <input type="text" placeholder="title" v-model="newBoard.title" required />
-      <button class="board-button">Create Board</button>
+      <input
+        type="text"
+        placeholder="title"
+        class="nes-input col-3 mt-3"
+        v-model="newBoard.title"
+        required
+      />
+      <button class="nes-btn ml-2">Create Board</button>
     </form>
-    <button class="mt-3 board-button" v-for="board in boards" :key="board._id">
-      <router-link
-        :to="{name: 'board', params: {boardId: board._id}}"
-        class="text-white"
-      >{{board.title}}</router-link>
-    </button>
+    <router-link
+      :to="{name: 'board', params: {boardId: board._id}}"
+      class="mt-3 ml-2 nes-btn text-dark"
+      v-for="board in boards"
+      :key="board._id"
+    >{{board.title}}</router-link>
   </div>
 </template>
 
@@ -78,13 +83,17 @@ export default {
 };
 </script>
 <style scoped>
+.font {
+  font-family: "Press Start 2p";
+  font-size: 10px;
+}
 .text-color {
   color: #908a99;
 }
-.board-button {
+/* .board-button {
   display: inline-block;
   padding: 3px 8px;
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
   outline: none;
   color: #fff;
@@ -100,11 +109,11 @@ export default {
   background-color: #8d8ebe;
   box-shadow: 0 3px #606188;
   transform: translateY(4px);
-}
-.board-button:focus {
+} */
+.nes-btn:focus {
   outline: 0;
 }
-.logout-button {
+/* .logout-button {
   display: inline-block;
   padding: 3px 8px;
   font-size: 12px;
@@ -126,5 +135,5 @@ export default {
 }
 .logout-button:focus {
   outline: 0;
-}
+} */
 </style>
