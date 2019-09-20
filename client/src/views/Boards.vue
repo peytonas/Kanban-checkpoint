@@ -40,11 +40,11 @@
         v-model="newBoard.title"
         required
       />
-      <button class="nes-btn ml-2">Create Board</button>
+      <button class="nes-btn is-success is-success ml-2">Create Board</button>
     </form>
     <router-link
       :to="{name: 'board', params: {boardId: board._id}}"
-      class="mt-3 ml-2 nes-btn text-dark"
+      class="mt-3 ml-2 nes-btn is-warning text-dark"
       v-for="board in boards"
       :key="board._id"
     >{{board.title}}</router-link>

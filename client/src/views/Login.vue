@@ -1,23 +1,25 @@
 <template>
-  <div class="font">
-    <form v-if="loginForm" @submit.prevent="loginUser">
-      <input type="email" v-model="creds.email" placeholder="email" />
-      <input type="password" v-model="creds.password" placeholder="password" />
-      <button class="login-button">Login</button>
-    </form>
-    <form v-else @submit.prevent="register">
-      <input type="text" v-model="newUser.name" placeholder="name" />
-      <input type="email" v-model="newUser.email" placeholder="email" />
-      <input type="password" v-model="newUser.password" placeholder="password" />
-      <button class="login-button">Create Account</button>
-    </form>
-    <div class="action text-color" @click="loginForm = !loginForm">
-      <p v-if="loginForm">
-        <b>No account? Click here to Register</b>
-      </p>
-      <p v-else>
-        <b>Already have an account? Click here to Login</b>
-      </p>
+  <div class="row justify-content-center mt-2">
+    <div class="col-5 font">
+      <form v-if="loginForm" @submit.prevent="loginUser">
+        <input class="nes-input" type="email" v-model="creds.email" placeholder="email" />
+        <input class="nes-input" type="password" v-model="creds.password" placeholder="password" />
+        <button class="nes-btn is-primary mt-2">Login</button>
+      </form>
+      <form v-else @submit.prevent="register">
+        <input class="nes-input" type="text" v-model="newUser.name" placeholder="name" />
+        <input class="nes-input" type="email" v-model="newUser.email" placeholder="email" />
+        <input class="nes-input" type="password" v-model="newUser.password" placeholder="password" />
+        <button class="nes-btn is-primary mt-2">Create Account</button>
+      </form>
+      <div class="action text-color mt-1" @click="loginForm = !loginForm">
+        <p v-if="loginForm">
+          <b>No account? Click here to Register</b>
+        </p>
+        <p v-else>
+          <b>Already have an account? Click here to Login</b>
+        </p>
+      </div>
     </div>
   </div>
 </template>

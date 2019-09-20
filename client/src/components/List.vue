@@ -5,11 +5,13 @@
       <!-- start of card in card -->
       <div class="row justify-content-center">
         <div class="col-3 mt-1">
-          <button
-            class="nes-btn"
-            data-toggle="modal"
-            :data-target="'#create-task-modal' +listProp._id"
-          >Create A Task</button>
+          <div class="row justify-content-center">
+            <button
+              class="nes-btn is-success"
+              data-toggle="modal"
+              :data-target="'#create-task-modal' +listProp._id"
+            >Create A Task</button>
+          </div>
         </div>
       </div>
       <TaskModal :listId="listProp._id" />
@@ -61,6 +63,6 @@ export default {
   font-size: 5px;
 }
 .card-background {
-  background-color: #211a21;
+  background-color: #4f43ae;
 }
 </style>

@@ -21,7 +21,7 @@
                 required
               />
             </div>
-            <button type="submit" class="nes-btn">Make a Task</button>
+            <button type="submit" class="nes-btn is-success">Make a Task</button>
           </form>
         </div>
         <div class="modal-footer"></div>

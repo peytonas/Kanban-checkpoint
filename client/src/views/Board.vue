@@ -5,10 +5,39 @@
         <button class="nes-btn is-primary mt-2 text-dark" @click="gotoBoards()">Boards</button>
       </div>
       <div class="col-1 mt-2">
-        <button class="nes-btn is-error" @click="deleteBoard()">
+        <button
+          class="nes-btn is-error"
+          onclick="document.getElementById('dialog-rounded').showModal();"
+        >
           <i class="nes-icon close is-small"></i>
         </button>
+        <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+          <form method="dialog">
+            <p>Are you sure you want to delete this board?</p>
+            <menu class="dialog-menu">
+              <button class="nes-btn">Cancel</button>
+              <button class="nes-btn is-primary" @click="deleteBoard()">Confirm</button>
+            </menu>
+          </form>
+        </dialog>
       </div>
+      <!-- <section>
+    <button
+      type="button"
+      class="nes-btn is-primary"
+      onclick="document.getElementById('dialog-rounded').showModal();"
+    >Open rounded dialog</button>
+    <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+      <form method="dialog">
+        <p class="title">Rounded dialog</p>
+        <p>Alert: this is a dialog.</p>
+        <menu class="dialog-menu">
+          <button class="nes-btn">Cancel</button>
+          <button class="nes-btn is-primary">Confirm</button>
+        </menu>
+      </form>
+    </dialog>
+      </section>-->
     </div>
     <div class="row justify-content-center">
       <div class="col-6 justify-space-between">
@@ -20,7 +49,7 @@
     <div class="row justify-space-between">
       <div class="col-12 mt-3">
         <button
-          class="nes-btn mb-2"
+          class="nes-btn is-success mb-2"
           data-toggle="modal"
           data-target="#create-list-modal"
         >Create A List</button>

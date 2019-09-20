@@ -9,7 +9,7 @@
     <!-- comment card in card -->
     <div class="col-12 mt-3">
       <button
-        class="comment-button"
+        class="nes-btn is-success"
         data-toggle="modal"
         :data-target="'#create-comment-modal' + taskProp._id"
       >Add a comment</button>
@@ -26,7 +26,7 @@
         <option v-for="list in lists" :key="list._id" :value="list._id">{{list.title}}</option>
       </select>
     </div>
-    <button class="comment-button" @click="moveTask()">Move it</button>
+    <button class="nes-btn is-warning" @click="moveTask()">Move it</button>
     <!-- </div> -->
   </div>
 </template>

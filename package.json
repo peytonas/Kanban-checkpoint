@@ -22,7 +22,8 @@
         "express-session": "^1.15.0",
         "mongoose": "^5.7.1",
         "nes.css": "^2.2.0",
-        "sweetalert2": "^8.17.6"
+        "sweetalert2": "^8.17.6",
+        "vuedraggable": "^2.23.0"
     },
     "engines": {
         "node": "^10.0.0",
