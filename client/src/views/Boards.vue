@@ -14,24 +14,6 @@
         </h1>
       </div>
     </div>
-
-    <!-- <section>
-            <button
-              type="button"
-              class="nes-btn is-error"
-              onclick="document.getElementById('dialog-dark-rounded').showModal();"
-            >logout</button>
-            <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
-              <form method="dialog">
-                <p>Are you sure you want to log out?</p>
-                <menu class="dialog-menu">
-                  <button class="nes-btn">Cancel</button>
-                  <button class="nes-btn is-primary">Confirm</button>
-                </menu>
-              </form>
-            </dialog>
-    </section>-->
-
     <form class="mt-3" @submit.prevent="addBoard()">
       <input
         type="text"

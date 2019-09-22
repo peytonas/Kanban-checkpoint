@@ -24,6 +24,7 @@
         "mongoose": "^5.7.1",
         "nes.css": "^2.2.0",
         "sweetalert2": "^8.17.6",
+        "vue-draggable": "^2.0.2",
         "vuedraggable": "^2.23.0"
     },
     "engines": {

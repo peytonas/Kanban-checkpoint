@@ -1,33 +1,25 @@
 <template>
   <div class="container">
-    <div>
-      <h5 class="text-color">{{taskProp.title}}</h5>
-    </div>
-    <button class="nes-btn is-error" @click.prevent="deleteTask()">
-      <i class="nes-icon close is-small"></i>
-    </button>
-    <!-- comment card in card -->
-    <div class="col-12 mt-3">
-      <button
-        class="nes-btn is-success"
-        data-toggle="modal"
-        :data-target="'#create-comment-modal' + taskProp._id"
-      >Add a comment</button>
+    <div v-drag-and-drop:options="options">
+      <div>
+        <h3 class="text-color">{{taskProp.title}}</h3>
+        <button class="nes-btn is-error" @click.prevent="deleteTask()">
+          <i class="nes-icon close is-small"></i>
+        </button>
+        <!-- comment card in card -->
+        <div class="col-12 mt-3">
+          <button
+            class="nes-btn is-success"
+            data-toggle="modal"
+            :data-target="'#create-comment-modal' + taskProp._id"
+          >Add a comment</button>
+        </div>
+      </div>
     </div>
     <commentModal :taskId="taskProp._id" :listId="taskProp.listId" />
     <div class="col-12 mt-3">
       <comment class="mt-2" v-for="comment in comments" :commentProp="comment" :key="comment._id" />
     </div>
-    <!-- end of comment card -->
-    <!-- dropdown for list select -->
-    <div class="nes-select font text-color">
-      <select v-model="selected">
-        <option value disabled selected hidden>Move task...</option>
-        <option v-for="list in lists" :key="list._id" :value="list._id">{{list.title}}</option>
-      </select>
-    </div>
-    <button class="nes-btn is-warning" @click="moveTask()">Move it</button>
-    <!-- </div> -->
   </div>
 </template>
 
@@ -41,8 +33,24 @@ export default {
     this.$store.dispatch("getComments", this.taskProp._id);
   },
   data() {
+    const componentInstance = this;
     return {
-      selected: ""
+      selected: "",
+      options: {
+        dropzoneSelector: "drop",
+        draggableSelector: "div",
+        showDropzoneAreas: true,
+        multipleDropzonesItemsDraggingEnabled: true,
+        onDrop(event) {
+          console.log(event);
+        },
+        onDragStart(event) {
+          event.start();
+        },
+        onDragEnd(event) {
+          event.stop;
+        }
+      }
     };
   },
   methods: {
