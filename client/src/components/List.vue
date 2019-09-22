@@ -1,4 +1,4 @@
-<template>
+<template class='row'>
   <div class="col-3 card card-background font ml-2">
     <div class="card-body text-color">
       <h5 class="card-title">{{listProp.title}}</h5>

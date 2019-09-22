@@ -69,27 +69,4 @@ export default {
   font-family: "Press Start 2p";
   font-size: 10px;
 }
-.login-button {
-  display: inline-block;
-  padding: 3px 8px;
-  font-size: 15px;
-  text-align: center;
-  outline: none;
-  color: #fff;
-  background-color: #b5b6e4;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px #606188;
-}
-.login-button:hover {
-  background-color: #a4a5d3;
-}
-.login-button:active {
-  background-color: #8d8ebe;
-  box-shadow: 0 3px #606188;
-  transform: translateY(4px);
-}
-.login-button:focus {
-  outline: 0;
-}
 </style>
