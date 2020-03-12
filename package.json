@@ -20,12 +20,9 @@
         "esm": "^3.2.25",
         "express": "^4.14.1",
         "express-session": "^1.15.0",
-        "masonry-layout": "^4.2.2",
         "mongoose": "^5.7.1",
         "nes.css": "^2.2.0",
-        "sweetalert2": "^8.17.6",
-        "vue-draggable": "^2.0.2",
-        "vuedraggable": "^2.23.0"
+        "sweetalert2": "^8.17.6"
     },
     "engines": {
         "node": "^10.0.0",
